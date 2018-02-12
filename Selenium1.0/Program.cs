@@ -40,15 +40,15 @@ namespace Selenium1._0
         [Test]
         public void ExecuteTest_SignUp()
         {
-            SetMethods.Click("js-toggleRightNavLg", "Id");
-            SetMethods.Click("rightNav-createAccount", "Id");
+            SetMethods.Click("js-toggleRightNavLg", PropertyType.Id);
+            SetMethods.Click("rightNav-createAccount", PropertyType.Id);
 
 
-            SetMethods.EnterText("username", "asaggo", "Id");
-            SetMethods.EnterText("firstname", "jessie", "Id");
-            SetMethods.EnterText("lastname", "ji", "Id");
-            SetMethods.EnterText("password", "1234qwer", "Id");
-            SetMethods.Click("createAccount", "Id");
+            SetMethods.EnterText("username", "asaggo", PropertyType.Id);
+            SetMethods.EnterText("firstname", "jessie", PropertyType.Id);
+            SetMethods.EnterText("lastname", "ji", PropertyType.Id);
+            SetMethods.EnterText("password", "1234qwer", PropertyType.Id);
+            SetMethods.Click("createAccount", PropertyType.Id);
             Console.WriteLine("Execute Test - SignUp");
         }
         
@@ -56,8 +56,8 @@ namespace Selenium1._0
         public void Signup_InputTest()
         {
 
-            SetMethods.Click("js-toggleRightNavLg", "Id");
-            SetMethods.Click("rightNav-createAccount", "Id");
+            SetMethods.Click("js-toggleRightNavLg", PropertyType.Id);
+            SetMethods.Click("rightNav-createAccount", PropertyType.Id);
 
             try
             {
@@ -68,12 +68,12 @@ namespace Selenium1._0
 
             }
 
-            SetMethods.Click("js-toggleRightNavLg", "Id");
-            SetMethods.Click("rightNav-createAccount", "Id");
+            SetMethods.Click("js-toggleRightNavLg", PropertyType.Id);
+            SetMethods.Click("rightNav-createAccount", PropertyType.Id);
 
 
-            SetMethods.EnterText("username", "asaggo", "Id");
-            SetMethods.EnterText("firstname", "jessie", "Id");
+            SetMethods.EnterText("username", "asaggo", PropertyType.Id);
+            SetMethods.EnterText("firstname", "jessie", PropertyType.Id);
         }
         
         [TearDown]

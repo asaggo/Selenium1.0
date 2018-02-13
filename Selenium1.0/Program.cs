@@ -40,6 +40,13 @@ namespace Selenium1._0
         [Test]
         public void ExecuteTest_SignUp()
         {
+            //initialize the pageobject
+            SignUpPageObject signupPage = new SignUpPageObject();
+
+            SignInPageObject signinPage = signupPage.SignUp("usernameJJ@jj.com", "Jessie", "Ji", "passwordJJ");
+            signinPage.Login("usernameJJ@jj.com", "passwordJJ");
+
+            /*
             SetMethods.Click("js-toggleRightNavLg", PropertyType.Id);
             SetMethods.Click("rightNav-createAccount", PropertyType.Id);
 
@@ -50,12 +57,13 @@ namespace Selenium1._0
             SetMethods.EnterText("password", "1234qwer", PropertyType.Id);
             SetMethods.Click("createAccount", PropertyType.Id);
             Console.WriteLine("Execute Test - SignUp");
+            */
         }
         
         [Test]
         public void Signup_InputTest()
         {
-
+            /*
             SetMethods.Click("js-toggleRightNavLg", PropertyType.Id);
             SetMethods.Click("rightNav-createAccount", PropertyType.Id);
 
@@ -74,6 +82,7 @@ namespace Selenium1._0
 
             SetMethods.EnterText("username", "asaggo", PropertyType.Id);
             SetMethods.EnterText("firstname", "jessie", PropertyType.Id);
+            */
         }
         
         [TearDown]

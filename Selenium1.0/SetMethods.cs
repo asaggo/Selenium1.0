@@ -11,6 +11,13 @@ namespace Selenium1._0
 {
     class SetMethods
     {
+        public static void ClickAccount()
+        {
+            //move LinkTo... method to here.
+            ;
+        }
+
+
         public static void EnterText(string elementName, string value, PropertyType elementType)
         {
 

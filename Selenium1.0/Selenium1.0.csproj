@@ -54,6 +54,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DriverImplicitWait.cs" />
+    <Compile Include="MyProfilePageObject.cs" />
+    <Compile Include="PageObject.cs" />
     <Compile Include="SignInPageObject.cs" />
     <Compile Include="SignUpPageObject.cs" />
     <Compile Include="Program.cs" />

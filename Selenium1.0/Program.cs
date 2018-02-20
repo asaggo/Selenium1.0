@@ -13,83 +13,61 @@ namespace Selenium1._0
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
 
         }
         
+        
         [SetUp]
         public void Initialize()
         {
             Properties.driver = new ChromeDriver();
-            Properties.driver.Navigate().GoToUrl("https://www.target.com/");
-            Console.WriteLine("Open URL");
+            PageObject pageObject = new PageObject();
+            pageObject.LinkToMainPage();
         }
-
-        [Test]
-        public void ExecuteTest_Search()
-        {
-            /*
-            IWebElement element = Properties.driver.FindElement(By.Name("q"));
-            element.SendKeys("Jessie Ji");
-            */
-            
-            Console.WriteLine("Execute Test - Search");
-        }
-
+        
+        /*
         [Test]
         public void ExecuteTest_SignUp()
         {
             //initialize the pageobject
+
             SignUpPageObject signupPage = new SignUpPageObject();
+            signupPage.LinkToSignUpPage();
+            signupPage.SignUp("usernameJJ@dwdf.com","passwordJJ!123");
+            
 
-            SignInPageObject signinPage = signupPage.SignUp("usernameJJ@jj.com", "Jessie", "Ji", "passwordJJ");
-            signinPage.Login("usernameJJ@jj.com", "passwordJJ");
-
-            /*
-            SetMethods.Click("js-toggleRightNavLg", PropertyType.Id);
-            SetMethods.Click("rightNav-createAccount", PropertyType.Id);
-
-
-            SetMethods.EnterText("username", "asaggo", PropertyType.Id);
-            SetMethods.EnterText("firstname", "jessie", PropertyType.Id);
-            SetMethods.EnterText("lastname", "ji", PropertyType.Id);
-            SetMethods.EnterText("password", "1234qwer", PropertyType.Id);
-            SetMethods.Click("createAccount", PropertyType.Id);
-            Console.WriteLine("Execute Test - SignUp");
-            */
         }
-        
+        */
+
         [Test]
-        public void Signup_InputTest()
+        public void ExecuteTest_SignIn()
         {
-            /*
-            SetMethods.Click("js-toggleRightNavLg", PropertyType.Id);
-            SetMethods.Click("rightNav-createAccount", PropertyType.Id);
-
-            try
-            {
-
-            }
-            catch (NoSuchElementException e)
-            {
-
-            }
-
-            SetMethods.Click("js-toggleRightNavLg", PropertyType.Id);
-            SetMethods.Click("rightNav-createAccount", PropertyType.Id);
-
-
-            SetMethods.EnterText("username", "asaggo", PropertyType.Id);
-            SetMethods.EnterText("firstname", "jessie", PropertyType.Id);
-            */
+            SignInPageObject signInPage = new SignInPageObject();
+            signInPage.LinkToLoginPage();
+            signInPage.Login("asaggo0717@gmail.com", "9002dnjs");
+            signInPage.checkUserEmailAfterSignIn();
         }
-        
+
+        [Test]
+        public void Execute_ChangeProfile()
+        {
+            ExecuteTest_SignIn();
+            //start change profile
+            MyProfilePageObject myProfilePage = new MyProfilePageObject();
+            myProfilePage.LinkToMyProfile();
+            myProfilePage.ChangePreferences();
+        }
+
+        /*
         [TearDown]
         public void CleanUp()
         {
             //Properties.driver.Close();
             Console.WriteLine("Close browser");
         }
+        */
     }
 }
